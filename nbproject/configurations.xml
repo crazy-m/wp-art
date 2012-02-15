@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="80">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>commport.h</itemPath>
+      <itemPath>device.h</itemPath>
+      <itemPath>dlgAbout.h</itemPath>
+      <itemPath>dlgSettings.h</itemPath>
+      <itemPath>ini.h</itemPath>
+      <itemPath>resource.h</itemPath>
+      <itemPath>settings.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+      <itemPath>resource.rc</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>commport.c</itemPath>
+      <itemPath>device.c</itemPath>
+      <itemPath>dlgAbout.c</itemPath>
+      <itemPath>dlgSettings.c</itemPath>
+      <itemPath>ini.c</itemPath>
+      <itemPath>main.c</itemPath>
+      <itemPath>settings.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandLine>-Wl,--subsystem,windows -mwindows -D__WINDOWS__ -D_WIN32_WINNT=0x0501</commandLine>
+        </cTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/art</output>
+          <linkerLibItems>
+            <linkerOptionItem>resource.o</linkerOptionItem>
+            <linkerLibFileItem>c:/windows/system32/comctl32.dll</linkerLibFileItem>
+          </linkerLibItems>
+          <commandLine>-lm -lstdc++ -lgcc -lodbc32 -lwsock32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lctl3d32 -lodbc32 -ladvapi32 -lodbc32 -lwsock32 -lopengl32 -lglu32 -lole32 -loleaut32 -luuid</commandLine>
+        </linkerTool>
+      </compileType>
+      <packaging>
+        <packType>Zip</packType>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}.exe"
+                            from="${OUTPUT_PATH}.exe"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+      </packaging>
+      <item path="resource.rc" ex="false" tool="3" flavor="0">
+        <customTool>
+          <customToolCommandline>windres.exe resource.rc resource.o</customToolCommandline>
+          <customToolDescription>Compiling resources…</customToolDescription>
+          <customToolOutputs>resource.o</customToolOutputs>
+          <customToolAdditionalDep>resource.h</customToolAdditionalDep>
+        </customTool>
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <commandLine>-Wl,--subsystem,windows -mwindows -D__WINDOWS__ -D_WIN32_WINNT=0x0501</commandLine>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/art</output>
+          <linkerLibItems>
+            <linkerOptionItem>resource.o</linkerOptionItem>
+            <linkerLibFileItem>c:/windows/system32/comctl32.dll</linkerLibFileItem>
+          </linkerLibItems>
+          <commandLine>-lm -lstdc++ -lgcc -lodbc32 -lwsock32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lctl3d32 -lodbc32 -ladvapi32 -lodbc32 -lwsock32 -lopengl32 -lglu32 -lole32 -loleaut32 -luuid</commandLine>
+        </linkerTool>
+      </compileType>
+      <packaging>
+        <packType>Zip</packType>
+        <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/art.zip</output>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}.exe"
+                            from="${OUTPUT_PATH}.exe"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+      </packaging>
+      <item path="resource.rc" ex="false" tool="3" flavor="0">
+        <customTool>
+          <customToolCommandline>windres.exe resource.rc resource.o</customToolCommandline>
+          <customToolDescription>Compiling resources…</customToolDescription>
+          <customToolOutputs>resource.o</customToolOutputs>
+          <customToolAdditionalDep>resource.h</customToolAdditionalDep>
+        </customTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
